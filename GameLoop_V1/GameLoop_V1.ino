@@ -56,6 +56,8 @@ void loop() {
     } else {
       Serial.print(String(firstPin));
       delay(2000);
+      isAnswerState = false;
+      isQuestionState = false;
     }
   }
 }
