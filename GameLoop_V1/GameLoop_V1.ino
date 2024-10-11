@@ -58,6 +58,7 @@ void loop() {
       delay(2000);
       isAnswerState = false;
       isQuestionState = false;
+      firstPin = -1;
     }
   }
 }
