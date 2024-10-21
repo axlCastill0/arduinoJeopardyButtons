@@ -45,6 +45,9 @@ void setup() {
 }
 
 void loop() {
+  Serial.println(String(isQuestionState));
+  Serial.println(String(isAnswerState));
+
   if(isQuestionState) {
     if(!isAnswerState) {
       turnOffPlayerButtons();
@@ -63,7 +66,7 @@ void loop() {
 
   if(isAnswerState) {
     if(firstPin == -1) {
-      readPins()
+      readPins();
     } else {
       Serial.print(String(firstPin));
       delay(2000);
@@ -107,9 +110,10 @@ void readPins() {
     } else if (digitalRead(player6Btn) == HIGH) {
       firstPin = player6Pwr;
     }
+  }
     
-    if (firstPin != -1) {
-      Serial.print("First signal received from pin: ");
-      Serial.println(firstPin);
-    }
+  if (firstPin != -1) {
+    Serial.print("First signal received from pin: ");
+    Serial.println(firstPin);
+  }
 }
