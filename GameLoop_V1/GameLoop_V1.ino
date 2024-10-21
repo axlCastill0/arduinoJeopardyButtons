@@ -45,36 +45,7 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(String(isQuestionState));
-  Serial.println(String(isAnswerState));
-
-  if(isQuestionState) {
-    if(!isAnswerState) {
-      turnOffPlayerButtons();
-    }
-  } else {
-    turnOnPlayerButtons();
-  }
-
-  if(digitalRead(hostPin) == 0 && !isQuestionState) {
-    isQuestionState = true;
-  } else {
-    digitalWrite(buzzerPin, HIGH);
-    isAnswerState = true;
-    turnOnPlayerButtons();
-  }
-
-  if(isAnswerState) {
-    if(firstPin == -1) {
-      readPins();
-    } else {
-      Serial.print(String(firstPin));
-      delay(2000);
-      isAnswerState = false;
-      isQuestionState = false;
-      firstPin = -1;
-    }
-  }
+  
 }
 
 void turnOnPlayerButtons() {
