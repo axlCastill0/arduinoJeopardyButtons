@@ -4,7 +4,7 @@ unsigned int firstPin = -1;
 unsigned int answerTimeout = 7000;
 unsigned int time;
 
-unsigned int player1Pwr = 2;
+int player1Pwr = 2;
 unsigned int player2Pwr = 3;
 unsigned int player3Pwr = 4;
 unsigned int player4Pwr = 5;
@@ -45,7 +45,10 @@ void setup() {
 }
 
 void loop() {
-  
+  turnOnPlayerButtons();
+  delay(7000);
+  turnOffPlayerButtons();
+  delay(500);
 }
 
 void turnOnPlayerButtons() {
